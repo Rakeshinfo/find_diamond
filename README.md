@@ -13,7 +13,15 @@ git clone https://github.com/Rakeshinfo/find_diamond.git
 ```bash
 npm install
 ```
-## 2. install local server and run in the folder
+## 2. install http server
 ```bash
 npm install -g http-server
+```
+## 3. go to project folder
+```bash
+http-server
+```
+## 4. open browser
+```bash
+http://localhost:8080/
 ```
