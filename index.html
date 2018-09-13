@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- using angular js -->
+    <script src="ctrl.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <div class="gover" ng-if="gameover">
+            <h1>Game over<br><br>you have scored {{score}}<br><br><br><a href=".">Lets Play Again</a></h1>
+        </div>
+        <div class="container">
+            <div class="tile num{{x.count}}" ng-repeat="x in cb" ng-click="tileClick(x);$parent.currentEl = x.count;">
+                <!-- repeating tiles with data-->
+                <div class="scene">
+                    <div class="card" ng-class="{'is-flipped': x.touch}">
+                        <div class="card_face card_front">&#10068;</div>
+                        <div class="card_face card_back">
+                            <img ng-if="x.diamond" class="dia" src="http://www.myiconfinder.com/uploads/iconsets/256-256-dfb575665ab5a76b6f2bc33651c78f34.png" alt="">
+                            <span class="arr" ng-show="x.count == $parent.currentEl && !x.diamond">&#8679;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
